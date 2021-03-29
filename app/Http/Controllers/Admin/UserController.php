@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +23,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(10);
+        $loggedId = intval(Auth::id());
 
-        return view('admin.users.index', ['users' => $users]);
+        return view('admin.users.index', ['users' => $users, 'loggedId' => $loggedId]);
     }
 
     /**
