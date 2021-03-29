@@ -16,9 +16,9 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th >ID</th>
+                    <th>ID</th>
                     <th>Título</th>
-                    <th >Ações</th>
+                    <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody>
