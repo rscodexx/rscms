@@ -22,7 +22,7 @@
 
 </p>
 <h1 align="center">
-    DevsNotes
+    RS CMS
 </h1>
 
 <h4 align="center"> 

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Meu Perfil')
+@section('title', 'Configurações')
 
 @section('content_header')
-    <h1>Meu Perfil</h1>
+    <h1>Configurações</h1>
 @endsection
 
 @section('content')
@@ -21,48 +21,59 @@
 
     @if(session('warning'))
         <div class="alert alert-success">
-                {{session('warning')}}
+            {{session('warning')}}
         </div>
     @endif
 
     <div class="card">
-
         <div class="card-body">
-            <form action="{{route('profile.save')}}" class="form-horizontal" method="post">
+            <form action="{{route('settings.save')}}" method="post">
                 @method('put')
                 @csrf
+
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nome Completo</label>
+                    <label class="col-sm-2 col-form-label">Título do site</label>
                     <div class="col-sm-10">
-                        <input type="text" name="name" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror">
+                        <input type="text" name="title" value="{{$settings['title']}}" class="form-control">
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Email</label>
+                    <label class="col-sm-2 col-form-label">Subtítulo do site</label>
                     <div class="col-sm-10">
-                        <input type="email" name="email" value="{{$user->email}}" class="form-control @error('email') is-invalid @enderror">
+                        <input type="text" name="subtitle" value="{{$settings['subtitle']}}" class="form-control">
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nova Senha</label>
+                    <label class="col-sm-2 col-form-label">E-mail para contato</label>
                     <div class="col-sm-10">
-                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
+                        <input type="email" name="email" value="{{$settings['email']}}" class="form-control">
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Repita a nova senha</label>
-                    <div class="col-sm-10">
-                        <input type="password" name="password_confirmation" class="form-control @error('password') is-invalid @enderror">
+                    <label class="col-sm-2 col-form-label">Cor do fundo</label>
+                    <div class="col-sm-1">
+                        <input type="color" name="bgcolor" value="{{$settings['bgcolor']}}" class="form-control">
                     </div>
                 </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Cor do texto</label>
+                    <div class="col-sm-1">
+                        <input type="color" name="textcolor" value="{{$settings['textcolor']}}" class="form-control">
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
                         <input type="submit" value="Salvar" class="btn btn-success">
                     </div>
                 </div>
+
             </form>
         </div>
     </div>
-
 @endsection
