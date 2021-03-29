@@ -11,6 +11,12 @@
 
 @section('content')
 
+    @if(session('warning'))
+        <div class="alert alert-success">
+            {{session('warning')}}
+        </div>
+    @endif
+
     <div class="card">
         <div class="card-body">
             <table class="table table-hover">
