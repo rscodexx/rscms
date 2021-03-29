@@ -59,7 +59,9 @@
             toolbar:'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
             content_css:[
                 '{{asset('assets/css/content.css')}}'
-            ]
+            ],
+            images_upload_url:'{{route('imageupload')}}',
+            images_upload_credentials:true
     });
     </script>
 
