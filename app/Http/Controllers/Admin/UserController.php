@@ -147,6 +147,8 @@ class UserController extends Controller
             }
 
             $user->save();
+
+            return redirect()->route('profile')->with('warning', 'Usuário editado com sucesso.');
         }
 
         return redirect()->route('users.index');
