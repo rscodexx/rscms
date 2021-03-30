@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "jeroennoten/laravel-adminlte": "^3.5",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "symfony/translation": "4.3.8"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
